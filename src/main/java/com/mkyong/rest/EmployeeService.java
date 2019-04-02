@@ -20,7 +20,7 @@ public class EmployeeService {
     // URI:
     // /contextPath/servletPath/employees
     @GET
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON })
     public List<Employee> getEmployees_JSON() {
         List<Employee> listOfCountries = EmployeeDAO.getAllEmployees();
         return listOfCountries;
@@ -30,7 +30,7 @@ public class EmployeeService {
     // /contextPath/servletPath/employees/{empNo}
     @GET
     @Path("/{empNo}")
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON })
     public Employee getEmployee(@PathParam("empNo") String empNo) {
         return EmployeeDAO.getEmployee(empNo);
     }
@@ -38,7 +38,7 @@ public class EmployeeService {
     // URI:
     // /contextPath/servletPath/employees
     @POST
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON })
     public Employee addEmployee(Employee emp) {
         return EmployeeDAO.addEmployee(emp);
     }
@@ -46,14 +46,14 @@ public class EmployeeService {
     // URI:
     // /contextPath/servletPath/employees
     @PUT
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON })
     public Employee updateEmployee(Employee emp) {
         return EmployeeDAO.updateEmployee(emp);
     }
  
     @DELETE
     @Path("/{empNo}")
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON })
     public void deleteEmployee(@PathParam("empNo") String empNo) {
         EmployeeDAO.deleteEmployee(empNo);
     }
